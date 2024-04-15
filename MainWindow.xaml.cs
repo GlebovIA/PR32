@@ -12,6 +12,11 @@ namespace PR32
             InitializeComponent();
         }
 
+        public void OpenPages(Pages page)
+        {
+            MainFrame.Navigate(page);
+        }
+
         private void OpenRecordList(object sender, RoutedEventArgs e)
         {
 
