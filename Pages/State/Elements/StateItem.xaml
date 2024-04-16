@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="PR32.Pages.State.Elements.StateItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PR32.Pages.State.Elements"
+             mc:Ignorable="d">
+    <Grid>
+        <Border BorderBrush="#fffafafa" BorderThickness="1" Background="#fffafafa" Height="160" CornerRadius="20" VerticalAlignment="Top" Margin="0, 0, 0, 20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="5" Opacity="0.5" Direction="315" Color="Black"/>
+            </Border.Effect>
+            <Grid Margin="15">
+                <Image Height="68" Width="68" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/VinylRecordsApplication;component/Images/ic_State.png"/>
+                <Button Content="Изменить" Height="25" Width="68" BorderBrush="#ffff9800" Background="#ffff9800" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0, 73, 0, 0" Click="EditState">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.5" Direction="315" Color="Black" />
+                    </Button.Effect>
+                </Button>
+                <Button Content="Изменить" Height="25" Width="68" BorderBrush="Red" Background="Red" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0, 103, 0, 0" Click="DeleteState">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.5" Direction="315" Color="Black" />
+                    </Button.Effect>
+                </Button>
+                <Grid Margin="73, 0, 0, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Top" Margin="0, 0, 10.2, 0">
+                        <TextBlock Text="#Наименование состояния"/>
+                    </Label>
+                    <TextBox x:Name="NameTBx" IsEnabled="False" TextWrapping="Wrap" Height="25" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="0, 26, 10.2, 0">
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.5" Direction="315" Color="Black" />
+                        </TextBox.Effect>
+                    </TextBox>
+
+                    <Label VerticalAlignment="Top" Margin="0, 51, 10.2, 0" Grid.ColumnSpan="2">
+                        <TextBlock Text="#Описание"/>
+                    </Label>
+                    <TextBox x:Name="DescriptionTBx" IsEnabled="False" TextWrapping="Wrap" Height="51" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="0, 77, 10.2, 0" Grid.ColumnSpan="2">
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.5" Direction="315" Color="Black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Label VerticalAlignment="Top" Margin="10, 0, 9.8, 0" Grid.Column="1">
+                        <TextBlock Text="#Сокращенное наименование"/>
+                    </Label>
+                    <TextBox x:Name="SubnameTBx" IsEnabled="False" TextWrapping="Wrap" Height="25" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="0, 26, 10.2, 0" Grid.Column="1">
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.5" Direction="315" Color="Black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
