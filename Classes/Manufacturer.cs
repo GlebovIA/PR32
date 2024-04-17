@@ -38,7 +38,7 @@ namespace PR32.Classes
             else
             {
                 Classes.DBConnection.Connection("Update [dbo].[Manufacturer] Set" +
-                    $"[Name] = N'{this.Name}', [CountryCode] = {this.CountryCode}, [Phone] = '{this.Phone}', [Mail] = '{this.Mail}' where [Id] = {this.Id}")
+                    $"[Name] = N'{this.Name}', [CountryCode] = {this.CountryCode}, [Phone] = '{this.Phone}', [Mail] = '{this.Mail}' where [Id] = {this.Id}");
             }
         }
         public void Delete() => Classes.DBConnection.Connection($"Delete from [dbo].[Manufacturer] where [Id] = {this.Id}");
