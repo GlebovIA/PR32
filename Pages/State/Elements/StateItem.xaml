@@ -11,7 +11,7 @@
                 <DropShadowEffect BlurRadius="10" ShadowDepth="5" Opacity="0.5" Direction="315" Color="Black"/>
             </Border.Effect>
             <Grid Margin="15">
-                <Image Height="68" Width="68" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/VinylRecordsApplication;component/Images/ic_State.png"/>
+                <Image Height="68" Width="68" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Images/ic_State.png"/>
                 <Button Content="Изменить" Height="25" Width="68" BorderBrush="#ffff9800" Background="#ffff9800" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0, 73, 0, 0" Click="EditState">
                     <Button.Effect>
                         <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.5" Direction="315" Color="Black" />
