@@ -34,8 +34,8 @@ namespace PR32.Classes
                     State = Convert.ToInt32(row[7]),
                     Description = Convert.ToString(row[8]),
                 });
-                return records;
             }
+            return records;
         }
         public void Save(bool Update = false)
         {

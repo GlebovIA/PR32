@@ -136,6 +136,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Records\Elements\RecordItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Records\RecordMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\State\AddState.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +166,12 @@
     </Compile>
     <Compile Include="Pages\Manufacturer\ManufacturerMain.xaml.cs">
       <DependentUpon>ManufacturerMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Records\Elements\RecordItem.xaml.cs">
+      <DependentUpon>RecordItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Records\RecordMain.xaml.cs">
+      <DependentUpon>RecordMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\State\AddState.xaml.cs">
       <DependentUpon>AddState.xaml</DependentUpon>
@@ -195,7 +209,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\Records\Elements\" />
     <Folder Include="Pages\Supply\Elements\" />
   </ItemGroup>
   <ItemGroup>
