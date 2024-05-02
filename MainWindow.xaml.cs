@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace PR32
 {
@@ -7,12 +8,14 @@ namespace PR32
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow MW;
         public MainWindow()
         {
             InitializeComponent();
+            MW = this;
         }
 
-        public void OpenPages(Pages page)
+        public void OpenPages(Page page)
         {
             MainFrame.Navigate(page);
         }

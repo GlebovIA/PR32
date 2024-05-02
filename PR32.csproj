@@ -136,6 +136,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Records\AddRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Records\Elements\RecordItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +170,9 @@
     </Compile>
     <Compile Include="Pages\Manufacturer\ManufacturerMain.xaml.cs">
       <DependentUpon>ManufacturerMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Records\AddRecord.xaml.cs">
+      <DependentUpon>AddRecord.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Records\Elements\RecordItem.xaml.cs">
       <DependentUpon>RecordItem.xaml</DependentUpon>
