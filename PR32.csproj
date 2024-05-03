@@ -161,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Supply\AddSupply.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Supply\Elements\SupplyItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -197,6 +201,9 @@
     </Compile>
     <Compile Include="Pages\State\StateMain.xaml.cs">
       <DependentUpon>StateMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Supply\AddSupply.xaml.cs">
+      <DependentUpon>AddSupply.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Supply\Elements\SupplyItem.xaml.cs">
       <DependentUpon>SupplyItem.xaml</DependentUpon>
