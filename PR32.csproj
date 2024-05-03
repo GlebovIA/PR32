@@ -161,6 +161,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Supply\Elements\SupplyItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Supply\SupplyMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\Manufacturer\AddManufacturer.xaml.cs">
@@ -190,6 +198,12 @@
     <Compile Include="Pages\State\StateMain.xaml.cs">
       <DependentUpon>StateMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Supply\Elements\SupplyItem.xaml.cs">
+      <DependentUpon>SupplyItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Supply\SupplyMain.xaml.cs">
+      <DependentUpon>SupplyMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -216,9 +230,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Supply\Elements\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\ic_Manufacture.png" />
     <Resource Include="Images\ic_State.png" />
