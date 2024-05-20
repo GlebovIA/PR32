@@ -29,8 +29,8 @@ namespace PR32.Pages.Supply
             if (changeSupply != null)
             {
                 ChangeSupply = changeSupply;
-                ManufacturerCB.SelectedIndex = AllManufacturers.ToList().FindIndex(x => x.Id == changeSupply.Manufacturer);
-                RecordCB.SelectedIndex = AllRecords.ToList().FindIndex(x => x.Id == changeSupply.Record);
+                ManufacturerCB.SelectedIndex = AllManufacturers.ToList().FindIndex(x => x.Id == changeSupply.IdManufacturer);
+                RecordCB.SelectedIndex = AllRecords.ToList().FindIndex(x => x.Id == changeSupply.IdRecord);
                 CountTBx.Text = changeSupply.Count.ToString();
                 DateTime dt = new DateTime();
                 DateTime.TryParse(changeSupply.DateDelivery, out dt);
@@ -49,8 +49,8 @@ namespace PR32.Pages.Supply
                     {
                         Classes.Supply newSupply = new Classes.Supply()
                         {
-                            Manufacturer = AllManufacturers.Where(x => x.Name == ManufacturerCB.SelectedItem.ToString()).First().Id,
-                            Record = AllRecords.Where(x => x.Name == RecordCB.SelectedItem.ToString()).First().Id,
+                            IdManufacturer = AllManufacturers.Where(x => x.Name == ManufacturerCB.SelectedItem.ToString()).First().Id,
+                            IdRecord = AllRecords.Where(x => x.Name == RecordCB.SelectedItem.ToString()).First().Id,
                             Count = Convert.ToInt32(CountTBx.Text),
                             DateDelivery = CorrectDate(DateDeliveryDP.SelectedDate.ToString())
                         };
@@ -60,8 +60,8 @@ namespace PR32.Pages.Supply
                     }
                     else
                     {
-                        ChangeSupply.Manufacturer = AllManufacturers.Where(x => x.Name == ManufacturerCB.SelectedItem.ToString()).First().Id;
-                        ChangeSupply.Record = AllRecords.Where(x => x.Name == RecordCB.SelectedItem.ToString()).First().Id;
+                        ChangeSupply.IdManufacturer = AllManufacturers.Where(x => x.Name == ManufacturerCB.SelectedItem.ToString()).First().Id;
+                        ChangeSupply.IdRecord = AllRecords.Where(x => x.Name == RecordCB.SelectedItem.ToString()).First().Id;
                         ChangeSupply.Count = Convert.ToInt32(CountTBx.Text);
                         ChangeSupply.DateDelivery = CorrectDate(DateDeliveryDP.SelectedDate.ToString());
                         ChangeSupply.Save(true);

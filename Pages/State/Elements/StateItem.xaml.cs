@@ -24,7 +24,7 @@ namespace PR32.Pages.State.Elements
 
         private void EditState(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.OpenPages(new Pages.State.Add(ThisState));
+            MainWindow.MW.OpenPages(new Pages.State.AddState(ThisState));
         }
 
         private void DeleteState(object sender, RoutedEventArgs e)
@@ -32,7 +32,7 @@ namespace PR32.Pages.State.Elements
             if (MessageBox.Show($"Удалить состояние: {this.ThisState.Name}?", "Уведомление", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 IEnumerable<Classes.Record> AllRecords = Classes.Record.AllRecords();
-                if (AllRecords.Where(x => x.State == ThisState.Id).Count() > 0)
+                if (AllRecords.Where(x => x.IdState == ThisState.Id).Count() > 0)
                 {
                     MessageBox.Show($"Состояние {this.ThisState.Name} невозможно удалить. Для начала Удалите зависимости.", "Уведомление");
                 }

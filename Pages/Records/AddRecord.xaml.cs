@@ -33,9 +33,9 @@ namespace PR32.Pages.Records
                 PriceTBx.Text = changeRecord.Price.ToString();
                 DescriptionTBx.Text = changeRecord.Description;
                 FormatCB.SelectedIndex = changeRecord.Format;
-                ManufacturerCB.SelectedIndex = Manufacturers.ToList().FindIndex(x => x.Id == changeRecord.Manufacturer);
+                ManufacturerCB.SelectedIndex = Manufacturers.ToList().FindIndex(x => x.Id == changeRecord.IdManufacturer);
                 SizeCB.SelectedIndex = changeRecord.Size;
-                StateCB.SelectedIndex = AllStates.ToList().FindIndex(x => x.Id == changeRecord.State);
+                StateCB.SelectedIndex = AllStates.ToList().FindIndex(x => x.Id == changeRecord.IdState);
                 AddRecordBtn.Content = "Изменить";
             }
         }
@@ -54,9 +54,9 @@ namespace PR32.Pages.Records
                                     Year = Convert.ToInt32(YearTBx.Text),
                                     Format = FormatCB.SelectedIndex,
                                     Size = SizeCB.SelectedIndex,
-                                    Manufacturer = Manufacturers.Where(x => x.Name == ManufacturerCB.SelectedValue.ToString()).First().Id,
+                                    IdManufacturer = Manufacturers.Where(x => x.Name == ManufacturerCB.SelectedValue.ToString()).First().Id,
                                     Price = float.Parse(PriceTBx.Text.Replace(".", ",")),
-                                    State = AllStates.Where(x => x.Name == StateCB.SelectedItem.ToString()).First().Id,
+                                    IdState = AllStates.Where(x => x.Name == StateCB.SelectedItem.ToString()).First().Id,
                                     Description = DescriptionTBx.Text
                                 };
                                 newRecord.Save();
@@ -69,9 +69,9 @@ namespace PR32.Pages.Records
                                 ChangeRecord.Year = Convert.ToInt32(YearTBx.Text);
                                 ChangeRecord.Format = FormatCB.SelectedIndex;
                                 ChangeRecord.Size = SizeCB.SelectedIndex;
-                                ChangeRecord.Manufacturer = Manufacturers.Where(x => x.Name == ManufacturerCB.SelectedValue.ToString()).First().Id;
+                                ChangeRecord.IdManufacturer = Manufacturers.Where(x => x.Name == ManufacturerCB.SelectedValue.ToString()).First().Id;
                                 ChangeRecord.Price = float.Parse(PriceTBx.Text.Replace(".", ","));
-                                ChangeRecord.State = AllStates.Where(x => x.Name == StateCB.SelectedItem.ToString()).First().Id;
+                                ChangeRecord.IdState = AllStates.Where(x => x.Name == StateCB.SelectedItem.ToString()).First().Id;
                                 ChangeRecord.Description = DescriptionTBx.Text;
                                 ChangeRecord.Save(true);
                                 MessageBox.Show($"Пластинка {ChangeRecord.Name} успешно изменена.", "Уведомление");

@@ -52,11 +52,11 @@ namespace PR32.Pages.Records
         {
             List<Classes.Record> FilterRecords = new List<Classes.Record>();
             if (ManufacturerCB.SelectedIndex != ManufacturerCB.Items.Count - 1)
-                FilterRecords = AllRecords.Where(x => x.Manufacturer == AllManufacturers.Where(y => y.Name == ManufacturerCB.SelectedItem.ToString()).First().Id).ToList();
+                FilterRecords = AllRecords.Where(x => x.IdManufacturer == AllManufacturers.Where(y => y.Name == ManufacturerCB.SelectedItem.ToString()).First().Id).ToList();
             else
                 FilterRecords = AllRecords.ToList();
             if (StateCB.SelectedIndex != StateCB.Items.Count - 1)
-                FilterRecords = FilterRecords.FindAll(x => x.State == AllStates.Where(y => y.Name == StateCB.SelectedItem.ToString()).First().Id);
+                FilterRecords = FilterRecords.FindAll(x => x.IdState == AllStates.Where(y => y.Name == StateCB.SelectedItem.ToString()).First().Id);
             if (NameTBx.Text != "")
             {
                 if ("моно".Contains(NameTBx.Text.ToLower()))

@@ -8,57 +8,57 @@
       Title="AddManufacturer"
       d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid>
-        <Border BorderThickness="1" BorderBrush="#fffafafa" Background="#fffafafa" CornerRadius="20" VerticalAlignment="Top" Margin="0, 0, 0, 20">
+    <Grid Background="#ffe6e6e6">
+        <Border BorderBrush="#fffafafa" BorderThickness="1" Background="#fffafafa" CornerRadius="20" Margin="20">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="5" Opacity="0.5" Color="Black"/>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="5" Opacity="0.5" Direction="315" Color="Black"/>
             </Border.Effect>
-        </Border>
-        <Grid Margin="15">
-            <Image Width="68" Height="68" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Images/ic_Manufacture.png"/>
-            <Grid Margin="73, 0, 0, 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50*"/>
-                    <ColumnDefinition Width="50*"/>
-                </Grid.ColumnDefinitions>
-                <Label VerticalAlignment="Top" Margin="0, 0, 10, 0">
-                    <TextBlock Text="#Наименование поставщика: "/>
-                </Label>
-                <TextBox x:Name="NameTBx" IsEnabled="False" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="0, 26, 10, 0">
-                    <TextBox.Effect>
-                        <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
-                    </TextBox.Effect>
-                </TextBox>
-                <Label VerticalAlignment="Top" Margin="0, 77, 10, 0">
-                    <TextBlock Text="#Номер телефона: "/>
-                </Label>
-                <TextBox x:Name="PhoneTBx" PreviewTextInput="PreviewNumber" IsEnabled="False" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="0, 103, 10, 0">
-                    <TextBox.Effect>
-                        <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
-                    </TextBox.Effect>
-                </TextBox>
-                <Label VerticalAlignment="Top" Margin="10, 0, 10, 0" Grid.Column="1">
-                    <TextBlock Text="#Страна: "/>
-                </Label>
-                <ComboBox x:Name="CountryCB" IsEnabled="False" Height="25" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="10, 26, 10, 0" Grid.Column="1">
-                    <ComboBox.Effect>
-                        <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
-                    </ComboBox.Effect>
-                </ComboBox>
-                <Label VerticalAlignment="Top" Margin="10, 77, 10, 0" Grid.Column="1">
-                    <TextBlock Text="#Почта: "/>
-                </Label>
-                <TextBox x:Name="MailTBx" IsEnabled="False" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="10, 103, 10, 0" Grid.Column="1">
-                    <TextBox.Effect>
-                        <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
-                    </TextBox.Effect>
-                </TextBox>
-                <Button x:Name="AddBtn" Click="AddNewManufacturer" Content="Добавить" FontWeight="Bold" Foreground="White" BorderBrush="#ffff9800" Background="#ffff9800" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 10, 10" Grid.Column="2">
-                    <Button.Effect>
-                        <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
-                    </Button.Effect>
-                </Button>
+            <Grid Margin="15">
+                <Image Width="68" Height="68" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Images/ic_Manufacture.png"/>
+                <Grid Margin="73, 0, 0, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Top" Margin="0, 0, 10, 0">
+                        <TextBlock Text="#Наименование поставщика: "/>
+                    </Label>
+                    <TextBox x:Name="NameTBx" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="0, 26, 10, 0">
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Label VerticalAlignment="Top" Margin="0, 77, 10, 0">
+                        <TextBlock Text="#Номер телефона: "/>
+                    </Label>
+                    <TextBox x:Name="PhoneTBx" PreviewTextInput="PreviewNumber" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="0, 103, 10, 0">
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Label VerticalAlignment="Top" Margin="10, 0, 10, 0" Grid.Column="1">
+                        <TextBlock Text="#Страна: "/>
+                    </Label>
+                    <ComboBox x:Name="CountryCB" Height="25" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="10, 26, 10, 0" Grid.Column="1">
+                        <ComboBox.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
+                        </ComboBox.Effect>
+                    </ComboBox>
+                    <Label VerticalAlignment="Top" Margin="10, 77, 10, 0" Grid.Column="1">
+                        <TextBlock Text="#Почта: "/>
+                    </Label>
+                    <TextBox x:Name="MailTBx" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10, 0" Margin="10, 103, 10, 0" Grid.Column="1">
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Button x:Name="AddBtn" Click="AddNewManufacturer" Content="Добавить" FontWeight="Bold" Foreground="White" BorderBrush="#ffff9800" Background="#ffff9800" Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 10, 10" Grid.Column="2">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="315" ShadowDepth="2" Opacity="0.5" Color="Black"/>
+                        </Button.Effect>
+                    </Button>
+                </Grid>
             </Grid>
-        </Grid>
+        </Border>
     </Grid>
 </Page>

@@ -56,7 +56,7 @@ namespace PR32.Pages.Manufacturer
                                     };
                                     newManufacturer.Save();
                                     MessageBox.Show($"Поставщик {newManufacturer.Name} успешно добавлен.", "Уведомление");
-                                    MainWindow.mainWindow.OpenPage(new AddManufacturer(newManufacturer));
+                                    MainWindow.MW.OpenPages(new AddManufacturer(newManufacturer));
                                 }
                                 else
                                 {

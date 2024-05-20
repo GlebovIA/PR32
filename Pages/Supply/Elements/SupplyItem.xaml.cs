@@ -19,8 +19,8 @@ namespace PR32.Pages.Supply.Elements
             InitializeComponent();
             Supply = supply;
             Main = main;
-            ManufacturerTBx.Text = AllManufacturers.Where(x => x.Id == Supply.Manufacturer).First().Name;
-            RecordTBx.Text = AllRecords.Where(x => x.Id == Supply.Record).First().Name;
+            ManufacturerTBx.Text = AllManufacturers.Where(x => x.Id == Supply.IdManufacturer).First().Name;
+            RecordTBx.Text = AllRecords.Where(x => x.Id == Supply.IdRecord).First().Name;
             DateDeliveryTBx.Text = CorrectDate(Supply.DateDelivery);
             CountTBx.Text = Supply.Count.ToString();
         }

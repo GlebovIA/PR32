@@ -27,14 +27,14 @@ namespace PR32.Pages.Manufacturer.Elements
 
         private void EditManufacturer(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.OpenPages(new Pages.Manufacturer.AddManufacturer(ThisManufacturer));
+            MainWindow.MW.OpenPages(new Pages.Manufacturer.AddManufacturer(ThisManufacturer));
         }
 
         private void DeleteManufacturer(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show($"Удалить поставщика: {this.ThisManufacturer.Name}?", "Уведомление", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                if (Classes.Record.AllRecords().Where(x => x.Manufacturer == ThisManufacturer.Id).Count() > 0)
+                if (Classes.Record.AllRecords().Where(x => x.IdManufacturer == ThisManufacturer.Id).Count() > 0)
                 {
                     MessageBox.Show($"Поставщика {this.ThisManufacturer.Name} невозможно удалить. Для начала удалите зависимости.", "Уведомление");
                 }

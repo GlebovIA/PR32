@@ -8,8 +8,8 @@ namespace PR32.Classes
     public class Supply
     {
         public int Id { get; set; }
-        public int Manufacturer { get; set; }
-        public int Record { get; set; }
+        public int IdManufacturer { get; set; }
+        public int IdRecord { get; set; }
         public string DateDelivery { get; set; }
         public int Count { get; set; }
         public static IEnumerable<Supply> AllSupplies()
@@ -24,8 +24,8 @@ namespace PR32.Classes
                 supplies.Add(new Supply()
                 {
                     Id = Convert.ToInt32(row[0]),
-                    Manufacturer = Convert.ToInt32(row[1]),
-                    Record = Convert.ToInt32(row[2]),
+                    IdManufacturer = Convert.ToInt32(row[1]),
+                    IdRecord = Convert.ToInt32(row[2]),
                     DateDelivery = CorrectDate,
                     Count = Convert.ToInt32(row[4]),
                 });
@@ -37,11 +37,11 @@ namespace PR32.Classes
             if (Update == false)
             {
                 Classes.DBConnection.Connection(
-                    "insert into [dbo].[Supply]([Manufacturer], [Record], [DateDelivery], [Count]) " +
-                    $"values ({Manufacturer}, {Record}, '{DateDelivery}', {Count});");
+                    "insert into [dbo].[Supply]([IdManufacturer], [IdRecord], [DateDelivery], [Count]) " +
+                    $"values ({IdManufacturer}, {IdRecord}, '{DateDelivery}', {Count});");
                 Id = Supply.AllSupplies().Where(
-                    x => x.Manufacturer == Manufacturer &&
-                    x.Record == Record &&
+                    x => x.IdManufacturer == IdManufacturer &&
+                    x.IdRecord == IdRecord &&
                     x.DateDelivery == DateDelivery &&
                     x.Count == Count).First().Id;
             }
@@ -50,8 +50,8 @@ namespace PR32.Classes
                 Classes.DBConnection.Connection(
                     "update [dbo].[Supply] " +
                     "set" +
-                    $"[Manufacturer] = {Manufacturer}, " +
-                    $"[Record] = {Record}, " +
+                    $"[Manufacturer] = {IdManufacturer}, " +
+                    $"[Record] = {IdRecord}, " +
                     $"[DateDelivery] = {DateDelivery}, " +
                     $"[Count] = {Count} " +
                     $"where [Id] = {Id};");
@@ -59,7 +59,7 @@ namespace PR32.Classes
         }
         public void Delete()
         {
-            Classes.DBConnection.Connection($"delete from [dbo].[Supply] where [If] = {Id};");
+            Classes.DBConnection.Connection($"delete from [dbo].[Supply] where [Id] = {Id};");
         }
     }
 }

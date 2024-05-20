@@ -7,7 +7,7 @@ namespace PR32.Pages.State
     /// <summary>
     /// Логика взаимодействия для AddState.xaml
     /// </summary>
-    public partial class AddState : UserControl
+    public partial class AddState : Page
     {
         Classes.State ChangeState;
         public AddState(Classes.State state = null)
@@ -39,7 +39,7 @@ namespace PR32.Pages.State
                         };
                         newState.Save();
                         MessageBox.Show($"Состояние {newState.Name} успешно добавлено.", "Уведомление");
-                        MainWindow.mainWindow.OpenPages(new Pages.State.AddState(newState));
+                        MainWindow.MW.OpenPages(new Pages.State.AddState(newState));
                     }
                     else
                     {

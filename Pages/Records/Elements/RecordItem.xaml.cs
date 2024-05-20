@@ -37,15 +37,15 @@ namespace PR32.Pages.Records.Elements
                     SizeTBx.Text = "Иной";
                     break;
             }
-            ManufacturerTBx.Text = AllManufacturers.Where(x => x.Id == Record.Manufacturer).First().Name;
+            ManufacturerTBx.Text = AllManufacturers.Where(x => x.Id == Record.IdManufacturer).First().Name;
             PriceTBx.Text = Record.Price.ToString();
-            StateTBx.Text = AllStates.Where(x => x.Id == Record.State).First().Name;
+            StateTBx.Text = AllStates.Where(x => x.Id == Record.IdState).First().Name;
             DescriptionTBx.Text = Record.Description;
         }
 
         private void EditRecord(object sender, RoutedEventArgs e)
         {
-            MainWindow.MW.OpenPages(new AddRecord(Record))
+            MainWindow.MW.OpenPages(new AddRecord(Record));
         }
 
         private void DeleteRecord(object sender, RoutedEventArgs e)
@@ -53,7 +53,7 @@ namespace PR32.Pages.Records.Elements
             if (MessageBox.Show($"Удалить виниловую пластинку: {Record.Name}?", "Уведомление", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 IEnumerable<Classes.Supply> AllSuppies = Classes.Supply.AllSupplies();
-                if (AllSuppies.Where(x => x.Record == Record.Id).Count() > 0)
+                if (AllSuppies.Where(x => x.IdRecord == Record.Id).Count() > 0)
                 {
                     MessageBox.Show($"Виниловую пластинку {Record.Name} невозможно удалить. Для начала удалите зависимости.", "Уведомление");
                 }
