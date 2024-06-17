@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+﻿using PR32.Classes;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -66,12 +66,7 @@ namespace PR32
 
         private void ExportRecord(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx";
-            saveFileDialog.RestoreDirectory = true;
-            saveFileDialog.ShowDialog();
-            if (saveFileDialog.FileName != "")
-                Classes.Record.Export(saveFileDialog.FileName, RecordMain.searchRecords);
+            Record.Export();
         }
     }
 }

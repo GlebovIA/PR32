@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PR32.Classes
 {
@@ -66,9 +68,33 @@ namespace PR32.Classes
         {
             Classes.DBConnection.Connection($"Delete from [dbo].[Record] where [Id] = {this.Id}");
         }
-        public static void Export(string FileName, List<Record> Records)
+        public static void Export()
         {
+            DataTable recordQuery = Classes.DBConnection.Connection("Select * from [dbo].[Record]");
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Add();
+            Excel.Worksheet worksheet = workbook.Sheets[1];
+            int index = 1;
+            foreach (DataRow row in recordQuery.Rows)
+            {
+                for (int i = 0; i < recordQuery.Columns.Count; i++)
+                {
+                    worksheet.Cells[index, i + 1].Value = row[i];
+                }
+                index++;
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = "ExportedData";
+            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+            saveFileDialog.DefaultExt = ".xlsx";
+            saveFileDialog.InitialDirectory = $@"{Environment.CurrentDirectory}/Data";
 
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFileDialog.FileName);
+            }
+            workbook.Close();
+            excelApp.Quit();
         }
     }
 }
